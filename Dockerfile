@@ -6,7 +6,7 @@ WORKDIR /usr/src/freeswitch/src
 RUN export DEBIAN_FRONTEND noninteractive && \
     apt-get -y -qq update && \
     apt-get -y install git aptitude && \
-    mkdir -p /usr/src/freeswitch/src && \
+    mkdir -p /usr/src/freeswitch && \
     git clone https://bitbucket.org/ianblenke/freeswitch.git /usr/src/freeswitch/src/ && \
     echo "USENETWORK=yes" >$HOME/.pbuilderrc && \
     ./debian/util.sh build-all -ibn -z9 -aamd64 -cjessie && \
